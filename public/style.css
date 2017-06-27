@@ -1,0 +1,101 @@
+@font-face {
+  font-family: 'Indie Flower';
+  font-weight: 400;
+  src: local('Indie Flower'),
+    url('https://fonts.googleapis.com/css?family=Indie+Flower');
+}
+
+@font-face {
+  font-family: 'Frijole';
+  font-weight: 400;
+  src: local('Frijole'), url('https://fonts.googleapis.com/css?family=Frijole');
+}
+
+html {
+  background-color: #f0f8ff;
+  color: #ffffff;
+  font-family: 'Indie Flower';
+}
+
+body {
+  background-color: #333333;
+  width: 60%;
+  margin: 0 auto;
+  border-radius: .5rem;
+  padding: 0 1rem 1rem 1rem;
+}
+
+h1 {
+  font-family: 'Frijole';
+  color: #555555;
+  font-size: 4em;
+  margin: 7rem 0 0 2rem;
+}
+
+input {
+  border: 1px solid black;
+  padding: .7rem;
+}
+
+input[type=submit] {
+  padding: .7rem;
+  width: 10rem;
+  background-color: #777777;
+  border: .1rem dotted #000000;
+  border-radius: 15rem;
+}
+
+#wrapper {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#letter-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.letters {
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+  font-size: 3em;
+  border-bottom: .1rem solid #ffffff;
+}
+
+.lettersLose {
+  border: 1px solid green;
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+  font-size: 3em;
+}
+
+#mystery {
+  border: 30px 0;
+  text-align: center;
+  display: flex;
+  flex-flow: row, nowrap;
+  align-items: center;
+}
+
+.cheatText {
+  font-size: 1em;
+  visibility: hidden;
+  position: absolute;
+  top: 50px;
+  z-index: 3;
+}
+
+#cheat:active .cheatText {
+  font-size: 1em;
+  visibility: visible;
+}
+
+#win {
+  color: rgb(251, 73, 175);
+}
+
+#lose {
+  color: rgb(184, 115, 255);
+}

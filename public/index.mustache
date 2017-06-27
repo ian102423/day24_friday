@@ -5,9 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Frijole" rel="stylesheet">
+    <title>Word Game</title>
 </head>
+Ï
 <body>
+    <div id="wrapper">
+        <h1>Word Game</h1>
+        <br>
+        <br>
+        <div id="letter-wrapper">
+            {{#game.display}}
+            <div class="letters">{{.}}</div>
+            {{/game.display}}
+        </div>
+        <br> {{^game.lose}}
+        <p id="guess-left">Guess left: {{game.guessesLeft}}</p>
+        {{/game.lose}} {{#game.lose}}
+        <p id="guess-out">No more guess left</p>
+        {{/game.lose}}
+        <br>
+        <form action="/" method="post">
+            {{#game.playing}}
+            <input type="text" name="guessLetter" placeholder="^~^" maxlength="1" size "1" autofocus> {{/game.playing}}
+            {{#game.lose}}
+            <p id="lose">{{game.status}}</p>
+            {{/game.lose}}
+            <input type="submit" value="{{game.btnText}}">
+            <br> {{#game.playing}}
+            <p id="guesses">Guess counts: {{game.lettersGuessed}}</p>
+            <br>
+            <p id="message">{{game.message}}</p>
+            {{/game.playing}}
+            <br> {{^game.playing}}
+            <h3>Modes:</h3>
+            <input type="radio" name="mode" value="easy" checked> Easy<br>
+            <input type="radio" name="mode" value="normal"> Normal<br>
+            <input type="radio" name="mode" value="hard"> Hard{{/game.playing}}
+        </form>
+    </div>
 </body>
 
 </html>
